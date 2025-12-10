@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MB to KB Converter</title>
+  <style>
+    body { 
+      width: 320px; 
+      padding: 15px; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background-color: #f7f9fc;
+    }
+    
+    h4 { 
+      margin-top: 0; 
+      color: #1e3a8a; /* Darker blue heading */
+      border-bottom: 2px solid #e0e7ff;
+      padding-bottom: 8px;
+    }
+
+    /* --- Box Layout Styling (Flexbox) --- */
+    .step-box {
+      background-color: #ffffff;
+      border: 1px solid #c3dafe;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .step-header {
+      font-weight: bold;
+      color: #3b82f6; /* Blue for step number */
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+    }
+
+    .step-header span {
+      background-color: #3b82f6;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      margin-right: 8px;
+      font-size: 0.9em;
+    }
+    /* --- End Box Layout Styling --- */
+
+    input[type="file"] { margin-bottom: 10px; display: block; }
+    
+    button { 
+      width: 100%;
+      padding: 10px; 
+      background-color: #10b981; /* Green CTA */
+      color: white; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+    button:hover:not(:disabled) { background-color: #059669; }
+    button:disabled { background-color: #ccc; cursor: not-allowed; }
+    
+    #status { 
+      color: #4b5563; 
+      font-size: 0.9em; 
+      min-height: 20px; 
+      margin-top: 10px;
+    }
+    #result { 
+      margin-top: 10px; 
+      padding-top: 10px; 
+    }
+    
+    .website-link { 
+      margin-top: 20px; 
+      padding-top: 10px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.8em;
+      text-align: center;
+    }
+    .website-link a {
+        color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <h4>Image Converter (MB to KB)</h4>
+
+  <div class="step-box">
+    <div class="step-header"><span>1</span> Select Your Image</div>
+    <input type="file" id="imageFile" accept="image/jpeg,image/png,image/webp">
+  </div>
+
+  <div class="step-box">
+    <div class="step-header"><span>2</span> Compress and Convert</div>
+    <button id="convertButton" disabled>Start Conversion (Quality 70%)</button>
+  </div>
+
+  <div class="step-box">
+    <div class="step-header"><span>3</span> Results & Download</div>
+    <p id="status">Ready to start. Select an image above.</p>
+    <div id="result"></div>
+  </div>
+
+  <div class="website-link">
+    <a href="https://mbtokbconverter.org/" target="_blank" rel="noopener noreferrer">
+      Visit our website for more tools
+    </a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
